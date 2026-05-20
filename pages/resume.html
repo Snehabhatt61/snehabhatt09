@@ -1,0 +1,333 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sneha Bhatt - Front-End Developer Resume</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#BDFF00',
+              secondary: '#9D4EDD',
+              'deep-indigo': '#1e1b4b',
+              'background-yolo': '#F1F1F1',
+              'surface-yolo': '#FFFFFF',
+              'text-dark': '#0a0f1c',
+              'muted-dark': '#4b5563',
+              charcoal: '#4A4A4A',
+            },
+            fontFamily: {
+              display: ['Space Grotesk', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply bg-background-yolo text-text-dark font-body antialiased selection:bg-primary selection:text-text-dark;
+        }
+      }
+    </style>
+  </head>
+  <body class="pt-4 md:pt-8 lg:pt-12">
+    <div id="header-placeholder"></div>
+    <div class="max-w-[1400px] mx-auto relative">
+      <!-- CONSOLIDATED TOP SECTION -->
+      <header class="bg-surface-yolo border border-gray-200 mb-8 overflow-hidden shadow-sm">
+        <!-- Name and Basic Info Row -->
+        <div
+          class="p-8 md:p-16 border-b border-gray-100 flex flex-col lg:flex-row justify-between items-start gap-12"
+        >
+          <div class="flex-grow">
+            <h1
+              class="text-5xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-4 text-charcoal"
+            >
+              Sneha Bhatt
+            </h1>
+            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
+              <p class="text-2xl md:text-2xl text-secondary font-medium uppercase tracking-wide">
+                Front-End Developer
+              </p>
+              <!-- <div class="hidden md:block w-32 h-4 bg-primary"></div> -->
+            </div>
+          </div>
+          <div class="shrink-0 pt-4">
+            <a
+              class="bg-primary rounded text-text-dark font-bold py-4 px-6 text-sm uppercase tracking-wide flex items-center gap-3 hover:opacity-90 transition-all shadow-md"
+              href="../assests/SnehaBhatt_Resume.pdf"
+              target="_blank"
+            >
+              <span>Download Resume</span>
+              <i class="fa-solid fa-download"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Integrated Info Grid Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          <!-- Left Column: Summary & Connect -->
+          <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 border-r border-gray-100">
+            <div class="p-6 md:p-8 md:col-span-2 border-b border-gray-100">
+              <p class="text-1xl md:text-1xl font-light leading-snug text-muted-dark italic">
+                Front-End Developer with
+                <span class="text-text-dark font-bold underline decoration-secondary">5 years</span>
+                of experience building high-performance, user-focused web applications. Strong
+                expertise in
+                <span class="text-text-dark font-bold">React.js</span> and modern frontend
+                ecosystems.
+              </p>
+            </div>
+            <div class="p-8 border-r border-gray-100">
+              <h2 class="text-xs font-bold uppercase tracking-[0.1em] text-gray-400 mb-6">
+                Connect
+              </h2>
+              <ul class="space-y-3 text-sm font-medium">
+                <li class="flex items-center gap-3">
+                  <span class="text-secondary w-5"><i class="fa-solid fa-envelope"></i></span>
+                  snehabhatt61@gmail.com
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="text-secondary w-5"><i class="fa-solid fa-phone"></i></span>
+                  9929501467
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="text-secondary w-5"><i class="fa-brands fa-github"></i></span>
+                  snehabhatt09
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="text-secondary w-5"><i class="fa-brands fa-linkedin"></i></span>
+                  snehabhatt61
+                </li>
+              </ul>
+            </div>
+            <div class="p-8">
+              <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">
+                Education
+              </h2>
+              <div class="space-y-6">
+                <div>
+                  <h3 class="font-display font-bold text-base">MCA</h3>
+                  <p class="text-xs text-muted-dark uppercase tracking-wider">RTU • 2018</p>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base">BCA</h3>
+                  <p class="text-xs text-muted-dark uppercase tracking-wider">MLSU • 2016</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column: Tech Stack (Tall & Dark) -->
+          <div class="lg:col-span-4 bg-charcoal p-8 md:p-12 text-white flex flex-col">
+            <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-8">
+              Tech Stack
+            </h2>
+            <div class="flex flex-wrap gap-2 content-start">
+              <span
+                class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/10 border border-white/20"
+                >React.js</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/10 border border-white/20"
+                >Redux Toolkit</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/10 border border-white/20"
+                >JavaScript</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/10 border border-white/20"
+                >TypeScript</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/10 border border-white/20"
+                >HTML5/CSS</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-primary text-text-dark"
+                >Claude</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-primary text-text-dark"
+                >Cline</span
+              >
+            </div>
+            <div class="mt-auto pt-12 hidden lg:block">
+              <div class="w-full h-px bg-white/10 mb-4"></div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-white/40">
+                Technical Expertise
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- EXPERIENCE LIST -->
+      <main class="mb-2">
+        <div class="bg-surface-yolo shadow-sm border-t-8 border-primary overflow-hidden">
+          <div class="p-8 md:p-16">
+            <h2
+              class="text-2xl font-black text-charcoal uppercase mb-16 border-b border-gray-100 pb-4"
+            >
+              Professional Experience
+            </h2>
+            <div class="space-y-24">
+              <div class="group flex flex-col md:flex-row gap-8 md:gap-16">
+                <div class="md:w-1/3 shrink-0">
+                  <span class="text-xs font-black uppercase text-secondary mb-3 block"
+                    >10/2024 — Present</span
+                  >
+                  <h3 class="text-xl font-bold leading-tight text-charcoal">Freelancer</h3>
+                  <p class="text-sm italic font-medium text-muted-dark">Self Employed</p>
+                </div>
+                <div class="md:w-2/3">
+                  <ul class="space-y-4 text-muted-dark text-md">
+                    <li class="flex gap-4">
+                      <span class="text-primary font-bold text-2xl">→</span>
+                      <span
+                        >Built long-term client relationships, resulting in
+                        <strong class="text-text-dark"
+                          >repeat business and ongoing collaborations</strong
+                        >.</span
+                      >
+                    </li>
+                    <li class="flex gap-4">
+                      <span class="text-primary font-bold text-2xl">→</span>
+                      <span
+                        >Delivered custom web solutions using AI (Claude), improved page load time
+                        by <strong class="text-text-dark">30–50%</strong>.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="group flex flex-col md:flex-row gap-8 md:gap-16">
+                <div class="md:w-1/3 shrink-0">
+                  <span class="text-xs font-black uppercase text-gray-400 mb-3 block"
+                    >08/2022 — 04/2023</span
+                  >
+                  <h3 class="text-xl font-bold leading-tight text-charcoal">Senior Developer</h3>
+                  <p class="text-sm italic font-medium text-muted-dark">
+                    Srijan Technologies | Remote
+                  </p>
+                </div>
+                <div class="md:w-2/3">
+                  <ul class="space-y-4 text-muted-dark text-md">
+                    <li class="flex gap-4">
+                      <span class="text-secondary font-bold text-2xl">→</span
+                      ><span
+                        >Used React Js to work on a data analytics project for McKinsey (client) and
+                        ensured code quality.</span
+                      >
+                    </li>
+                    <li class="flex gap-4">
+                      <span class="text-secondary font-bold text-2xl">→</span
+                      ><span
+                        >Provided guidance and support to team members throughout the project.</span
+                      >
+                    </li>
+                    <li class="flex gap-4">
+                      <span class="text-secondary font-bold text-2xl">→</span
+                      ><span
+                        >Implemented third-party libraries like HighCharts and JsSpreadsheet.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="group flex flex-col md:flex-row gap-8 md:gap-16">
+                <div class="md:w-1/3 shrink-0">
+                  <span class="text-xs font-black uppercase text-gray-400 mb-3 block"
+                    >09/2021 — 07/2022</span
+                  >
+                  <h3 class="text-xl font-bold leading-tight text-charcoal">Frontend Developer</h3>
+                  <p class="text-sm italic font-medium text-muted-dark">Phoenix Labs | Ahmedabad</p>
+                </div>
+                <div class="md:w-2/3">
+                  <ul class="space-y-4 text-muted-dark text-md">
+                    <li class="flex gap-4">
+                      <span class="text-primary font-bold text-2xl">→</span
+                      ><span
+                        >Utilized Figma to create comprehensive UX wireframes, ensuring intuitive
+                        and user-centered design.</span
+                      >
+                    </li>
+                    <li class="flex gap-4">
+                      <span class="text-primary font-bold text-2xl">→</span
+                      ><span
+                        >Built products from scratch using Webpack for efficient bundling and
+                        development.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="group flex flex-col md:flex-row gap-8 md:gap-16">
+                <div class="md:w-1/3 shrink-0">
+                  <span class="text-xs font-black uppercase text-gray-400 mb-3 block"
+                    >12/2020 — 09/2021</span
+                  >
+                  <h3 class="text-xl font-bold leading-tight text-charcoal">Software Developer</h3>
+                  <p class="text-sm italic font-medium text-muted-dark">Newt Global | Bangalore</p>
+                </div>
+                <div class="md:w-2/3">
+                  <ul class="space-y-4 text-muted-dark text-md">
+                    <li class="flex gap-4">
+                      <span class="text-secondary font-bold text-2xl">→</span
+                      ><span
+                        >Played an integral role in a prominent B2C project for a multinational
+                        client (Deloitte).</span
+                      >
+                    </li>
+                    <li class="flex gap-4">
+                      <span class="text-secondary font-bold text-2xl">→</span
+                      ><span>Successfully integrated Google Maps API into the project.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="group flex flex-col md:flex-row gap-8 md:gap-16">
+                <div class="md:w-1/3 shrink-0">
+                  <span class="text-xs font-black uppercase text-gray-400 mb-3 block"
+                    >02/2018 — 08/2020</span
+                  >
+                  <h3 class="text-xl font-bold leading-tight text-charcoal">Frontend Engineer</h3>
+                  <p class="text-sm italic font-medium text-muted-dark">Gridle | Ahmedabad</p>
+                </div>
+                <div class="md:w-2/3">
+                  <ul class="space-y-4 text-muted-dark text-md">
+                    <li class="flex gap-4">
+                      <span class="text-primary font-bold text-2xl">→</span
+                      ><span
+                        >Majorly worked on React js and Redux. Successfully completed an e-commerce
+                        website.</span
+                      >
+                    </li>
+                    <li class="flex gap-4">
+                      <span class="text-primary font-bold text-2xl">→</span
+                      ><span>Led(Frontend) a Saas product &amp; hired and trained interns.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="../js/loadComponents.js"></script>
+  </body>
+</html>

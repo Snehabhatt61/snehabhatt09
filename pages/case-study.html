@@ -1,0 +1,755 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Case Study: Art &amp; Craft E-commerce Platform</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Inter', 'sans-serif'],
+              'headline-md': ['Space Grotesk'],
+              'body-lg': ['Inter'],
+              caption: ['Inter'],
+              'display-xl': ['Space Grotesk'],
+              'body-md': ['Inter'],
+              'headline-lg': ['Space Grotesk'],
+              'label-mono': ['Space Grotesk'],
+            },
+            colors: {
+              primary: '#8b5cf6',
+              'primary-dark': '#7c3aed',
+              'primary-light': '#f5f3ff',
+              'on-primary': '#ffffff',
+              'deep-indigo': '#1e1b4b',
+              background: '#f8fafc',
+              surface: '#ffffff',
+              'on-surface': '#4A4A4A',
+              'on-surface-variant': '#475569',
+              outline: '#f5f3ff',
+              'outline-variant': '#f5f3ff',
+              secondary: '#65a30d',
+              'inverse-on-surface': '#ffffff',
+              'on-secondary-fixed': '#0f172a',
+              'on-tertiary-fixed': '#0f172a',
+              'on-background': '#0f172a',
+              'surface-container-high': '#f1f5f9',
+              'secondary-fixed': '#ecfccb',
+              'on-secondary-container': '#3f6212',
+              'surface-variant': '#f1f5f9',
+              'tertiary-fixed': '#e0e7ff',
+              'surface-dim': '#f8fafc',
+              'secondary-container': '#d9f99d',
+              'inverse-surface': '#0f172a',
+              'inverse-primary': '#7c3aed',
+              'primary-fixed': '#ddd6fe',
+              'tertiary-fixed-dim': '#c7d2fe',
+              'primary-fixed-dim': '#c4b5fd',
+              'on-secondary-fixed-variant': '#3f6212',
+              tertiary: '#1e293b',
+              'on-primary-fixed-variant': '#5b21b6',
+              'on-secondary': '#ffffff',
+              'surface-container': '#ffffff',
+              error: '#ef4444',
+              'tertiary-container': '#e0e7ff',
+              'error-container': '#fee2e2',
+              'on-tertiary-container': '#1e1b4b',
+              'primary-container': '#ede9fe',
+              'on-error': '#ffffff',
+              'surface-tint': '#8b5cf6',
+              'surface-container-lowest': '#ffffff',
+              'on-tertiary': '#ffffff',
+              'on-error-container': '#7f1d1d',
+              'surface-container-low': '#f8fafc',
+              'surface-container-highest': '#e2e8f0',
+              'on-tertiary-fixed-variant': '#3730a3',
+              'secondary-fixed-dim': '#bef264',
+              'surface-bright': '#ffffff',
+              'on-primary-container': '#4c1d95',
+              'on-primary-fixed': '#2e1065',
+            },
+            boxShadow: {
+              'high-depth': '0 10px 40px -10px rgba(0, 0, 0, 0.08)',
+              'xl-soft': '0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)',
+            },
+            fontSize: {
+              'headline-md': ['20px', { lineHeight: '1.3', fontWeight: '600' }],
+              'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
+              caption: ['12px', { lineHeight: '1.4', fontWeight: '500' }],
+              'display-xl': [
+                '60px',
+                {
+                  lineHeight: '1.1',
+                  letterSpacing: '-0.02em',
+                  fontWeight: '700',
+                },
+              ],
+              'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+              'headline-lg': ['28px', { lineHeight: '1.2', fontWeight: '600' }],
+              'label-mono': [
+                '14px',
+                {
+                  lineHeight: '1.0',
+                  letterSpacing: '0.05em',
+                  fontWeight: '500',
+                },
+              ],
+            },
+          },
+        },
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        h1,
+        h2,
+        h3,
+        h4 {
+          @apply font-heading font-black text-[#4A4A4A];
+        }
+        body {
+          @apply bg-background text-[#4A4A4A];
+        }
+      }
+      @keyframes reveal-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-bg {
+        transform: scale(1.02);
+        transition:
+          transform 1200ms ease-out,
+          filter 1200ms ease-out;
+        filter: blur(0.4px);
+        will-change: transform, filter;
+      }
+      .hero-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.06);
+        pointer-events: none;
+      }
+      .reveal-item {
+        opacity: 0;
+        animation: reveal-up 400ms ease-out forwards;
+        animation-timeline: view();
+        animation-range: entry 25% cover 40%;
+      }
+      .stagger-1 {
+        animation-delay: 50ms;
+      }
+      .stagger-2 {
+        animation-delay: 100ms;
+      }
+      .stagger-3 {
+        animation-delay: 150ms;
+      }
+      .stagger-4 {
+        animation-delay: 200ms;
+      }
+      .stagger-5 {
+        animation-delay: 250ms;
+      }
+      .strategy-card {
+        @apply transition-all duration-300 ease-in-out;
+      }
+      .strategy-card:hover {
+        @apply scale-[1.01] shadow-lg;
+      }
+      .stack-card {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .challenge-card {
+        @apply shadow-xl-soft relative transition-all duration-500 ease-in-out border border-outline bg-white;
+      }
+      .challenge-card:hover {
+        @apply -translate-y-3 shadow-2xl shadow-primary/10 border-primary/20;
+      }
+      .perspective-lg {
+        perspective: 2000px;
+      }
+      .laptop-keyboard-tilt {
+        transform: rotateX(60deg) translateY(-20px);
+        transform-style: preserve-3d;
+      }
+      .laptop-screen-tilt {
+        transform: rotateX(-5deg);
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div id="header-placeholder"></div>
+    <main class="pt-24">
+      <!-- Hero Section with 3D Laptop Mockup -->
+      <section
+        class="relative overflow-hidden pt-stack-lg pb-section-padding px-6 md:p-12 max-w-7xl mx-auto"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+          <div class="lg:col-span-5 z-10 pr-8">
+            <span
+              class="inline-block py-1 px-3 rounded-full bg-primary-fixed text-on-primary-fixed font-label-bold text-xs uppercase mb-stack-md"
+              >E-Commerce Experience</span
+            >
+            <h1 class="font-display-xl text-display-xl text-[#4A4A4A]">
+              Ornet
+              <span
+                class="relative inline-block bg-primary text-white px-8 py-2 rounded-full transform -rotate-2"
+                >Gift</span
+              >
+              Shop
+            </h1>
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-8 py-12 border-t border-gray-100">
+              <div>
+                <p class="font-label-bold text-label-bold text-primary text-outline uppercase mb-2">
+                  Role
+                </p>
+                <p class="font-headline-md text-l">Designer + Frontend</p>
+              </div>
+              <div>
+                <p class="font-label-bold text-label-bold text-primary text-outline uppercase mb-2">
+                  Team
+                </p>
+                <p class="font-headline-md text-l">1 Backend Engineer</p>
+              </div>
+              <div>
+                <p class="font-label-bold text-label-bold text-primary text-outline uppercase mb-2">
+                  Platform
+                </p>
+                <p class="font-headline-md text-l">Web, iOS, Android</p>
+              </div>
+              <div>
+                <p class="font-label-bold text-label-bold text-primary text-outline uppercase mb-2">
+                  Stage
+                </p>
+                <p class="font-headline-md text-l">0 → Shipped</p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex items-center gap-2 text-on-surface-variant font-label-bold">
+                <span class="material-symbols-outlined text-primary">calendar_today</span>
+                2025
+              </div>
+              <div class="flex items-center gap-2 text-on-surface-variant font-label-bold">
+                <span class="material-symbols-outlined text-primary">category</span>
+                Worked Directly with Client
+              </div>
+            </div>
+          </div>
+          <!-- 3D Laptop Mockup -->
+          <div class="lg:col-span-7 perspective-lg relative mt-16 lg:mt-0">
+            <div class="relative w-full aspect-[16/10] max-w-2xl mx-auto">
+              <!-- Screen -->
+              <div
+                class="laptop-screen-tilt relative z-20 w-full aspect-[16/10] rounded-t-xl border-4 border-slate-800 p-2 shadow-2xl overflow-hidden"
+              >
+                <div
+                  class="w-full h-full bg-white rounded-sm overflow-hidden border border-slate-200"
+                >
+                  <img
+                    alt="Website Interface"
+                    class="w-full h-full object-cover"
+                    data-alt="Modern minimalist website interface for a gift shop showing artisanal products with elegant typography and white space"
+                    src="../assests/Ornet_full.png"
+                  />
+                </div>
+              </div>
+              <!-- Keyboard Base -->
+              <div
+                class="laptop-keyboard-tilt absolute -bottom-16 left-0 right-0 h-12 bg-slate-400 rounded-b-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-t border-white/20"
+              >
+                <div class="absolute inset-x-4 top-1 h-1 bg-slate-500/20 rounded-full"></div>
+                <div
+                  class="absolute inset-x-12 top-4 bottom-2 bg-primary-fixed rounded-lg flex items-center justify-center"
+                >
+                  <div class="w-24 h-1 bg-black rounded-full"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative Background Glow -->
+            <!-- <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 blur-[100px] -z-10 rounded-full"
+            ></div> -->
+          </div>
+        </div>
+      </section>
+      <section class="grid grid-cols-1 md:grid-cols-2 border-b border-primary-light">
+        <div
+          class="p-12 md:p-24 border-r border-primary-light flex flex-col justify-center bg-white reveal-item"
+        >
+          <h2
+            class="text-[30px] mb-8 tracking-tight uppercase text-[#4A4A4A] reveal-item stagger-1"
+          >
+            Overview
+          </h2>
+          <p class="text-lg text-on-surface-variant leading-relaxed mb-8 reveal-item stagger-2">
+            I built a responsive art and craft e-commerce website focused on creating a smooth
+            browsing and shopping experience across devices. The goal was to combine a clean
+            storefront UI with strong performance, intuitive navigation, and a visually distinct
+            brand feel that matched the handmade nature of the products.
+          </p>
+          <div
+            class="flex items-center gap-3 text-primary font-bold uppercase text-xs tracking-widest reveal-item stagger-3"
+          >
+            <span class="material-symbols-outlined text-lg">handshake</span>
+            <p>Worked directly with - Client</p>
+          </div>
+        </div>
+        <div class="p-12 md:p-24 bg-background flex flex-col justify-center reveal-item">
+          <h2
+            class="text-[30px] mb-8 tracking-tight uppercase text-[#4A4A4A] reveal-item stagger-1"
+          >
+            Technical Decisions
+          </h2>
+          <p class="text-on-surface-variant mb-10 text-lg reveal-item stagger-2">
+            Architecture engineered for speed and scalability:
+          </p>
+          <div class="flex flex-wrap gap-4 reveal-item stagger-3">
+            <span
+              class="px-6 py-3 bg-white border border-primary-light font-bold text-sm uppercase tracking-widest flex items-center gap-3 shadow-sm rounded-lg text-on-surface"
+            >
+              <span class="size-2 bg-primary rounded-full"></span> React
+            </span>
+            <span
+              class="px-6 py-3 bg-white border border-primary-light font-bold text-sm uppercase tracking-widest flex items-center gap-3 shadow-sm rounded-lg text-on-surface"
+            >
+              <span class="size-2 bg-secondary rounded-full"></span>
+              JavaScript
+            </span>
+            <span
+              class="px-6 py-3 bg-white border border-primary-light font-bold text-sm uppercase tracking-widest flex items-center gap-3 shadow-sm rounded-lg text-on-surface"
+            >
+              <span class="size-2 bg-primary rounded-full"></span> Tailwind CSS
+            </span>
+            <span
+              class="px-6 py-3 bg-white border border-primary-light font-bold text-sm uppercase tracking-widest flex items-center gap-3 shadow-sm rounded-lg text-on-surface"
+            >
+              <span class="size-2 bg-secondary rounded-full"></span> Redux
+            </span>
+            <span
+              class="px-6 py-3 bg-white border border-primary-light font-bold text-sm uppercase tracking-widest flex items-center gap-3 shadow-sm rounded-lg text-on-surface"
+            >
+              <span class="size-2 bg-primary rounded-full"></span> React Query
+            </span>
+          </div>
+        </div>
+      </section>
+      <section class="p-12 md:p-24 bg-white border-b border-primary-light overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+          <h2
+            class="text-[30px] mb-24 tracking-tight text-center md:text-left uppercase text-[#4A4A4A] reveal-item"
+          >
+            Challenge
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start">
+            <div
+              class="challenge-card border-primary-light p-10 rounded-3xl md:-translate-y-6 reveal-item stagger-1"
+            >
+              <div class="mb-6 text-primary/5 font-black text-8xl absolute -top-12 left-6">01</div>
+              <p class="text-on-surface text-lg leading-relaxed font-bold mt-4 relative z-10">
+                The main challenge was to make the website feel different from a typical e-commerce
+                store while still keeping it easy to use.
+              </p>
+            </div>
+            <div
+              class="challenge-card border-primary-light p-10 rounded-3xl md:translate-y-8 reveal-item stagger-2"
+            >
+              <div class="mb-6 text-secondary/5 font-black text-8xl absolute -top-12 left-6">
+                02
+              </div>
+              <p class="text-on-surface text-lg leading-relaxed font-bold mt-4 relative z-10">
+                The interface needed to reflect the creative, handcrafted nature of the brand
+                without becoming visually heavy or confusing.
+              </p>
+            </div>
+            <div
+              class="challenge-card border-primary-light p-10 rounded-3xl md:-translate-y-2 reveal-item stagger-3"
+            >
+              <div class="mb-6 text-primary/5 font-black text-8xl absolute -top-12 left-6">03</div>
+              <p class="text-on-surface text-lg leading-relaxed font-bold mt-4 relative z-10">
+                Maintaining design fidelity and handcrafted aesthetics across a multitude of screen
+                resolutions and devices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="relative py-16 overflow-hidden bg-background border-b border-primary-light">
+        <div
+          class="max-w-7xl mx-auto px-8 md:px-12 grid grid-cols-1 lg:grid-cols-12 items-center gap-16"
+        >
+          <div class="lg:col-span-4 reveal-item">
+            <h2 class="text-[30px] mb-12 tracking-tighter uppercase text-[#4A4A4A]">
+              Approach / Strategy
+            </h2>
+          </div>
+          <div class="lg:col-span-8 flex justify-end">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full md:w-[130%]">
+              <div
+                class="strategy-card p-10 rounded-[24px] bg-[#fdf2f8] flex flex-col justify-center min-h-[140px] reveal-item stagger-1"
+              >
+                <h3 class="text-[20px] font-bold mb-2 leading-tight text-[#4A4A4A]">
+                  01 User Journey
+                </h3>
+                <p class="text-on-surface-variant leading-relaxed text-sm">
+                  I started with user journeys and business goals, then mapped the core flows to
+                  reduce friction from discovery to checkout.
+                </p>
+              </div>
+              <div
+                class="strategy-card p-10 rounded-[24px] bg-[#f5f3ff] flex flex-col justify-center min-h-[140px] reveal-item stagger-2"
+              >
+                <h3 class="text-[20px] font-bold mb-2 leading-tight text-[#4A4A4A]">
+                  02 Mobile-First UI
+                </h3>
+                <p class="text-on-surface-variant leading-relaxed text-sm">
+                  The UI was designed mobile-first with clear hierarchy, fast scanning, and
+                  consistent CTAs to support easy browsing and conversion.
+                </p>
+              </div>
+              <div
+                class="strategy-card p-10 rounded-[24px] bg-[#f5f3ff] flex flex-col justify-center min-h-[140px] reveal-item stagger-3"
+              >
+                <h3 class="text-[20px] font-bold mb-2 leading-tight text-[#4A4A4A]">
+                  03 Trust Signals
+                </h3>
+                <p class="text-on-surface-variant leading-relaxed text-sm">
+                  I focused on trust-building details like product clarity, pricing visibility, and
+                  reassurance elements to improve purchase confidence.
+                </p>
+              </div>
+              <div
+                class="strategy-card p-10 rounded-[24px] bg-[#fdf2f8] flex flex-col justify-center min-h-[140px] reveal-item stagger-4"
+              >
+                <h3 class="text-[20px] font-bold mb-2 leading-tight text-[#4A4A4A]">
+                  04 Performance Focus
+                </h3>
+                <p class="text-on-surface-variant leading-relaxed text-sm">
+                  Performance and scalability were kept in mind from the start, so the interface
+                  stays clean, fast, and easy to extend.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-40 bg-white border-b border-primary-light">
+        <div class="max-w-7xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div class="relative min-h-[400px] flex items-center reveal-item stagger-1">
+            <div
+              class="stack-card w-full max-w-lg bg-[#0f172a] text-slate-300 p-10 rounded-2xl border border-slate-800 shadow-high-depth font-mono text-base z-10"
+            >
+              <div class="flex gap-2 mb-8">
+                <div class="size-3 rounded-full bg-red-500"></div>
+                <div class="size-3 rounded-full bg-yellow-500"></div>
+                <div class="size-3 rounded-full bg-green-500"></div>
+              </div>
+              <div class="space-y-4">
+                <p class="flex gap-4">
+                  <span class="text-primary/70">/app</span>
+                  <span class="text-white">→ App shell (providers, routing)</span>
+                </p>
+                <p class="flex gap-4">
+                  <span class="text-primary/70">/pages</span>
+                  <span class="text-white">→ Route views</span>
+                </p>
+                <p class="flex gap-4">
+                  <span class="text-primary/70">/features</span>
+                  <span class="text-white">→ Functional slices (e.g., cart)</span>
+                </p>
+                <p class="flex gap-4">
+                  <span class="text-primary/70">/entities</span>
+                  <span class="text-white">→ Domain models (User, Product)</span>
+                </p>
+                <p class="flex gap-4">
+                  <span class="text-primary/70">/shared</span>
+                  <span class="text-white">→ Reusable logic/components</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-item stagger-2">
+            <h2 class="text-[30px] mb-8 tracking-tighter uppercase text-[#4A4A4A]">
+              Frontend Architecture
+            </h2>
+            <p class="text-xl text-on-surface-variant leading-relaxed mb-10">
+              Component-driven, layered architecture built for scalability and performance.
+            </p>
+            <div class="space-y-8 mb-10">
+              <div class="flex items-start gap-4 reveal-item stagger-1">
+                <div
+                  class="size-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-primary">layers</span>
+                </div>
+                <div>
+                  <h4 class="text-[14px] font-bold text-[#4A4A4A]">
+                    UI → Reusable React components
+                  </h4>
+                  <p class="text-on-surface-variant text-sm mt-1">
+                    Design system driven visual layer.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 reveal-item stagger-2">
+                <div
+                  class="size-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-secondary">database</span>
+                </div>
+                <div>
+                  <h4 class="text-[14px] font-bold text-[#4A4A4A]">
+                    State → Redux (global), local state
+                  </h4>
+                  <p class="text-on-surface-variant text-sm mt-1">
+                    Predictable state management across the app.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 reveal-item stagger-3">
+                <div
+                  class="size-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-primary">sync_alt</span>
+                </div>
+                <div>
+                  <h4 class="text-[14px] font-bold text-[#4A4A4A]">
+                    Data → React Query (server state, caching)
+                  </h4>
+                  <p class="text-on-surface-variant text-sm mt-1">
+                    Optimized data fetching and real-time syncing.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-8 bg-surface-container border border-primary-light rounded-2xl reveal-item stagger-4"
+            >
+              <p class="text-on-surface font-medium leading-relaxed italic">
+                Clear separation of concerns. High cohesion, low coupling. Optimized for
+                maintainability, fast iteration, and real-world performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="grid grid-cols-1 md:grid-cols-2 border-y border-primary-light">
+        <div
+          class="p-12 md:p-24 flex flex-col justify-center border-r border-primary-light bg-white reveal-item stagger-1"
+        >
+          <h2 class="text-[30px] mb-8 tracking-tight uppercase text-[#4A4A4A]">
+            UI Implementation
+          </h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed">
+            The visual style was implemented using Tailwind CSS, ensuring layout system rigor,
+            design consistency, and maximum component reuse.
+          </p>
+        </div>
+        <div class="p-12 md:p-24 bg-background space-y-6">
+          <div
+            class="flex justify-between items-center p-8 bg-white border border-primary-light rounded-2xl hover:border-primary transition-all duration-500 ease-in-out group shadow-sm reveal-item stagger-2"
+          >
+            <span class="font-bold uppercase tracking-widest text-sm text-on-surface"
+              >Layout system</span
+            >
+            <span
+              class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform"
+              >check_circle</span
+            >
+          </div>
+          <div
+            class="flex justify-between items-center p-8 bg-white border border-primary-light rounded-2xl hover:border-secondary transition-all duration-500 ease-in-out group shadow-sm reveal-item stagger-3"
+          >
+            <span class="font-bold uppercase tracking-widest text-sm text-on-surface"
+              >Design consistency</span
+            >
+            <span
+              class="material-symbols-outlined text-secondary group-hover:scale-110 transition-transform"
+              >check_circle</span
+            >
+          </div>
+          <div
+            class="flex justify-between items-center p-8 bg-white border border-primary-light rounded-2xl hover:border-primary transition-all duration-500 ease-in-out group shadow-sm reveal-item stagger-4"
+          >
+            <span class="font-bold uppercase tracking-widest text-sm text-on-surface"
+              >Component reuse</span
+            >
+            <span
+              class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform"
+              >check_circle</span
+            >
+          </div>
+        </div>
+      </section>
+      <section class="bg-white py-16 overflow-hidden border-b border-primary-light">
+        <div class="max-w-7xl mx-auto px-12">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="bg-primary p-12 md:p-16 rounded-[2.5rem] text-white reveal-item stagger-1">
+              <h2 class="text-[30px] mb-8 text-white tracking-tighter uppercase font-black">
+                Interactions &amp; Motion
+              </h2>
+              <p class="text-white/80 text-lg leading-relaxed mb-8">
+                I used CSS animations and transitions to make the interface feel more alive without
+                distracting from the content. Some of the interaction work included
+                <span class="text-secondary font-semibold">(Hover to see the effects) :</span>
+              </p>
+              <ul
+                class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-[10px] font-bold tracking-widest uppercase"
+              >
+                <li class="flex items-center gap-4 text-white hover:text-secondary">
+                  <span class="size-2 bg-secondary rounded-full"></span>
+                  Smooth hover effects
+                </li>
+                <li
+                  class="flex items-center gap-4 text-white hover:scale-105 transition-all duration-300 ease-in"
+                >
+                  <span class="size-2 bg-white/50 rounded-full"></span> Gentle transitions
+                </li>
+                <li
+                  class="flex items-center gap-4 text-white transform transition hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
+                >
+                  <span class="size-2 bg-secondary rounded-full"></span>
+                  Lightweight motion
+                </li>
+                <li
+                  class="flex items-center gap-4 text-white shadow-sm hover:shadow-md transition-shadow duration-200"
+                >
+                  <span class="size-2 bg-white/50 rounded-full"></span> Subtle feedback
+                </li>
+              </ul>
+            </div>
+            <div
+              class="relative bg-background p-16 rounded-[2.5rem] border border-primary-light shadow-xl reveal-item stagger-2"
+            >
+              <p class="text-2xl text-on-surface italic leading-relaxed font-light">
+                "The goal was not to over-animate, but to make interactions feel intentional and
+                polished."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="grid grid-cols-1 md:grid-cols-2 border-b border-primary-light">
+        <div class="p-12 md:p-24 bg-background border-r border-primary-light reveal-item">
+          <h2
+            class="text-[30px] mb-16 tracking-tight uppercase text-[#4A4A4A] reveal-item stagger-1"
+          >
+            Performance &amp; Optimization
+          </h2>
+          <div class="grid grid-cols-1 gap-12">
+            <div class="flex items-center gap-8 reveal-item stagger-2">
+              <span class="text-6xl font-black text-secondary">40%</span>
+              <div class="h-px flex-grow bg-primary-dark"></div>
+              <span
+                class="font-bold uppercase tracking-widest text-[10px] text-right text-on-surface"
+                >Load Time Improvement <br /><span class="font-bold capitalize text-secondary"
+                  >code-splitting + lazy loading</span
+                ></span
+              >
+            </div>
+            <div class="flex items-center gap-8 reveal-item stagger-3">
+              <span class="text-6xl font-black text-primary">30%</span>
+              <div class="h-px flex-grow bg-primary-dark"></div>
+              <span
+                class="font-bold uppercase tracking-widest text-[10px] text-right text-on-surface"
+                >Lower Blocking Time <br /><span class="font-bold capitalize text-secondary"
+                  >Memoization + Fewer re-renders</span
+                ></span
+              >
+            </div>
+            <div class="flex items-center gap-8 reveal-item stagger-3">
+              <span class="text-6xl font-black text-primary">32%</span>
+              <div class="h-px flex-grow bg-primary-dark"></div>
+              <span
+                class="font-bold uppercase tracking-widest text-[10px] text-right text-on-surface"
+                >Reduced Bundle Size <br /><span class="font-bold capitalize text-secondary"
+                  >tree-shaking + optimized imports</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="p-12 md:p-24 flex flex-col justify-center bg-white reveal-item">
+          <h2
+            class="text-[30px] mb-8 tracking-tight text-right uppercase text-[#4A4A4A] reveal-item stagger-1"
+          >
+            AI Assistance
+          </h2>
+          <p
+            class="text-on-surface-variant text-md text-right mb-12 max-w-md ml-auto reveal-item stagger-2"
+          >
+            Leveraging tools like Stitch(Google) and Figma to accelerate design, ideation, and Cline
+            & Copilot for development.
+          </p>
+          <div
+            class="p-3 bg-primary-fixed opacity-10 border-b-2 border-primary rounded-xl italic text-on-surface text-2xl leading-relaxed shadow-sm reveal-item stagger-3"
+          >
+            "Used Cline for vibe coding/speed and my own brain for everything that matters."
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-white border-b border-primary-light">
+        <div class="max-w-5xl mx-auto px-8 md:px-12">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-12">
+            <div class="max-w-xs reveal-item">
+              <h2 class="text-[32px] mb-4 tracking-tighter uppercase text-[#4A4A4A]">
+                Responsive Experience
+              </h2>
+              <p class="text-sm text-on-surface-variant font-medium leading-relaxed">
+                Reinforcing real-world usability through adaptive interfaces.
+              </p>
+            </div>
+            <div class="flex-grow grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-item stagger-1">
+              <div
+                class="p-8 bg-background border border-primary-light rounded-2xl group hover:border-primary transition-all duration-300 ease-out"
+              >
+                <span class="material-symbols-outlined text-3xl text-primary mb-4 block"
+                  >smartphone</span
+                >
+                <h4 class="text-sm font-bold mb-2 uppercase tracking-widest text-[#4A4A4A]">
+                  Mobile-first
+                </h4>
+                <p class="text-on-surface-variant text-xs leading-relaxed">
+                  Optimized layouts ensuring core performance on small viewports.
+                </p>
+              </div>
+              <div
+                class="p-8 bg-background border border-primary-light rounded-2xl group hover:border-secondary transition-all duration-300 ease-out"
+              >
+                <span class="material-symbols-outlined text-3xl text-secondary mb-4 block"
+                  >devices</span
+                >
+                <h4 class="text-sm font-bold mb-2 uppercase tracking-widest text-[#4A4A4A]">
+                  Cross-device
+                </h4>
+                <p class="text-on-surface-variant text-xs leading-relaxed">
+                  A uniform brand experience across iOS, Android and Web browsers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/loadComponents.js"></script>
+  </body>
+</html>

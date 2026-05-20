@@ -1,0 +1,423 @@
+<html class="dark scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Precision Luminary - Vivid Tech</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#bef264', // Electric Lime
+              accent: '#f472b6', // Hot Pink
+              'deep-indigo': '#1e1b4b', // Dark Saturated Indigo
+              'mid-indigo': '#312e81',
+              surface: '#1e1b4b',
+              'on-surface': '#f8fafc',
+              'on-primary': '#000000',
+            },
+            borderRadius: {
+              DEFAULT: '0.5rem',
+              lg: '1rem',
+              xl: '1.5rem',
+              full: '9999px',
+            },
+            fontFamily: {
+              headline: ['Inter', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+              label: ['Space Grotesk', 'monospace'],
+            },
+            boxShadow: {
+              vivid:
+                '0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2), 0 0 40px -10px rgba(244, 114, 182, 0.3)',
+              layered:
+                '0 0 0 1px rgba(255, 255, 255, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4)',
+              highlight: '0 0 20px rgba(190, 242, 100, 0.4)',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+            },
+            animation: {
+              float: 'float 4s ease-in-out infinite',
+            },
+          },
+        },
+      }
+    </script>
+    <style type="text/tailwindcss">
+      body {
+        background-color: #1e1b4b;
+        color: #f8fafc;
+        font-family: theme('fontFamily.body');
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .blueprint-grid {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+        background-position: center center;
+      }
+      .vivid-gradient {
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(244, 114, 182, 0.15) 0%,
+          transparent 70%
+        );
+      }
+      .neon-border {
+        border: 1px solid rgba(190, 242, 100, 0.3);
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      details[open] .plus-icon {
+        display: none;
+      }
+      details:not([open]) .minus-icon {
+        display: none;
+      }
+    </style>
+  </head>
+  <body
+    class="antialiased min-h-screen flex flex-col relative selection:bg-primary selection:text-black"
+  >
+    <div id="header-placeholder"></div>
+    <main class="pt-15 flex-grow blueprint-grid bg-deep-indigo relative">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1000px] vivid-gradient pointer-events-none"
+      ></div>
+      <section
+        class="relative min-h-[800px] flex items-center px-8 max-w-7xl mx-auto overflow-hidden"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full z-10">
+          <div class="space-y-8 flex flex-col items-start order-1 lg:order-1">
+            <div
+              class="font-label text-sm text-primary tracking-widest uppercase flex items-center gap-2"
+            >
+              <span class="w-2 h-2 rounded-full bg-primary"></span>Frontend Engineer / UI-UX
+            </div>
+            <h1
+              class="font-headline font-black text-6xl md:text-8xl leading-[0.9] text-white tracking-wide"
+            >
+              Sneha
+              <span
+                class="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-blue-400 tracking-tight"
+                >Bhatt</span
+              >
+            </h1>
+            <p class="font-body text-md text-white/70 max-w-md leading-relaxed">
+              <!-- Hello 🖐️ <br /> -->
+              5 years spent building digital experiences across E-commerce, FinTech, SaaS, and the
+              Creative Industry. This little corner reflects the work, curiosity, and passion behind
+              everything I create.
+            </p>
+            <div class="flex gap-4 pt-4">
+              <a
+                class="bg-primary text-black font-headline font-bold px-8 py-4 rounded-full hover:scale-105 transition-all flex items-center gap-2 shadow-layered"
+                href="#featured-works"
+              >
+                View Projects
+                <span
+                  class="material-symbols-outlined text-sm"
+                  style="font-variation-settings: 'FILL' 1"
+                  >arrow_forward</span
+                >
+              </a>
+              <a
+                href="../assests/SnehaBhatt_Resume.pdf"
+                target="_blank"
+                class="bg-white/5 text-white font-headline font-medium px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
+                >Download Resume</a
+              >
+            </div>
+          </div>
+          <div
+            class="relative w-full aspect-square md:aspect-[4/3] bg-mid-indigo/50 backdrop-blur-sm rounded-lg p-8 border border-white/10 flex flex-col shadow-vivid overflow-hidden group order-2 lg:order-2 animate-float"
+          >
+            <div class="flex justify-between items-center mb-6 font-label text-xs text-white/40">
+              <div class="flex gap-2">
+                <span class="w-3 h-3 rounded-full bg-accent/30 border border-accent/50"></span>
+                <span class="w-3 h-3 rounded-full bg-primary/30 border border-primary/50"></span>
+                <span class="w-3 h-3 rounded-full bg-blue-400/30 border border-blue-400/50"></span>
+              </div>
+              <span>Component.tsx</span>
+            </div>
+            <div class="flex-grow flex flex-col gap-6">
+              <div
+                class="flex-1 bg-deep-indigo/80 rounded-lg p-6 flex items-center justify-center border border-white/5 relative overflow-hidden shadow-inner"
+              >
+                <a href="../assests/SnehaBhatt_Resume.pdf" target="_blank">
+                  <button
+                    class="relative overflow-hidden bg-white/5 text-primary border border-primary/50 px-8 py-3 rounded-full font-label text-sm uppercase tracking-widest hover:bg-primary hover:text-black transition-all duration-300"
+                  >
+                    <span class="relative z-10">Download Resume</span>
+                  </button>
+                </a>
+              </div>
+              <div
+                class="flex-1 bg-deep-indigo rounded-lg p-4 font-label text-xs text-white/60 overflow-x-auto border border-white/5"
+              >
+                <pre
+                  class="leading-relaxed"
+                ><span class="text-accent">const</span> DownloadButton = ({ <span class="text-primary">label</span> }) =&gt; {
+  <span class="text-accent">return</span> (
+    &lt;<span class="text-blue-400">button</span> 
+      <span class="text-primary">className</span>=<span class="text-primary/70">"relative overflow-hidden bg-primary 
+                 text-black border-none 
+                 rounded-full font-label text-sm uppercase"</span>
+    &gt;
+      {<span class="text-primary">label</span>}
+    &lt;/<span class="text-blue-400">button</span>&gt;
+  )
+}
+</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="w-full max-w-7xl mx-auto px-8 py-16 scroll-mt-24" id="featured-works">
+        <div class="font-label text-md text-white/80 flex items-center gap-4">
+          <span>root</span>
+          <span class="material-symbols-outlined text-md"> double_arrow </span>
+          <span>projects</span>
+          <span class="material-symbols-outlined"> double_arrow </span>
+          <!-- <span class="material-symbols-outlined text-md">chevron_right</span> -->
+          <span class="text-accent font-bold">featured-work.jsx</span>
+          <div class="flex-grow h-px bg-white/10 ml-4"></div>
+        </div>
+      </div>
+      <section class="px-8 max-w-7xl mx-auto pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-5 relative group cursor-pointer block">
+            <div
+              class="relative w-full h-[500px] bg-mid-indigo rounded-lg overflow-hidden border border-white/10 shadow-vivid"
+            >
+              <div
+                class="absolute w-full h-full inset-0 from-deep-indigo via-transparent to-deep-indigo group-hover:scale-110"
+              ></div>
+              <!-- Top glow -->
+              <div
+                class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-primary/20 to-transparent"
+              ></div>
+              <img src="../assests/AdityaBirla.png" class="w-full h-full object-contain" />
+              <div
+                class="absolute bg-gradient-to-t from-deep-indigo via-deep-indigo/40 to-transparent"
+              ></div>
+              <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
+                <div class="transition-transform duration-500 group-hover:-translate-y-2">
+                  <h2 class="font-headline font-bold text-3xl text-white tracking-tight mb-2">
+                    MoneyPlanner Aditya Birla
+                  </h2>
+                  <!-- <p class="font-body text-white/60 text-sm">
+                    A high-frequency trading interface designed for institutional clarity.
+                  </p> -->
+                  <div class="mt-5">
+                    <a
+                      href="https://www.adityabirlacapital.com/abc-of-calculators/sip-calculator"
+                      class="bg-white/5 text-primary font-headline font-medium px-6 py-2 rounded-full border border-white/20 hover:bg-primary/10 transition-colors"
+                      >View Live Link</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-7 relative group cursor-pointer block">
+            <div
+              class="relative w-full h-[600px] bg-mid-indigo rounded-lg overflow-hidden border border-white/10 shadow-vivid"
+            >
+              <div
+                class="absolute inset-0 bg-deep-indigo bg-cover bg-center bg-no-repeat transition-transform duration-1000 group-hover:scale-110 opacity-60"
+                style="
+                  background-image: url('../assests/Ornet.png');
+                  background-size: cover;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                "
+              ></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-deep-indigo via-deep-indigo/40 to-transparent"
+              ></div>
+              <div class="absolute bottom-0 left-0 w-full p-12 flex flex-col justify-end">
+                <div class="transition-transform duration-500 group-hover:-translate-y-2">
+                  <h2 class="font-headline font-bold text-3xl text-white tracking-tight mb-4">
+                    Ornet Gift Shop
+                  </h2>
+                  <!-- <p class="font-body text-white/60 max-w-lg">
+                    A dark-mode native component library built for developer velocity. Establishing
+                    a new visual language for enterprise security tools.
+                  </p> -->
+                  <div class="mt-5">
+                    <a
+                      href="./case-study.html"
+                      class="bg-white/5 text-primary font-headline font-medium px-6 py-2 rounded-full border border-white/20 hover:bg-primary/10 transition-colors"
+                      >View Case Study</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="py-32 px-8 max-w-7xl mx-auto border-t border-white/10 bg-deep-indigo relative z-10"
+      >
+        <div class="flex flex-col lg:flex-row gap-16 items-start">
+          <div
+            class="flex-shrink-0 lg:w-[40%] border-r border-white/10 lg:pr-12 order-1 lg:order-1"
+          >
+            <div class="font-label text-xs text-primary font-bold mb-4 uppercase tracking-[0.2em]">
+              Methodology
+            </div>
+            <h3 class="font-headline font-semibold text-3xl text-white mb-6 leading-tight">
+              How I Work
+            </h3>
+            <div class="space-y-1">
+              <details class="group border-b border-white/10" open="">
+                <summary class="flex justify-between items-center cursor-pointer py-3 list-none">
+                  <span
+                    class="font-headline font-bold text-sm text-white transition-colors group-hover:text-primary"
+                    >01. Scalable Architecture</span
+                  >
+                  <span
+                    class="material-symbols-outlined plus-icon text-white/40 text-sm transition-all group-hover:text-primary"
+                    >add</span
+                  >
+                  <span
+                    class="material-symbols-outlined minus-icon text-primary text-sm transition-all"
+                    >remove</span
+                  >
+                </summary>
+                <div class="font-body text-white/50 text-xs leading-relaxed pb-4 pr-4">
+                  I create reusable and maintainable frontend systems built for consistency and
+                  long-term scalability. The focus stays on clean structure and efficient workflows.
+                </div>
+              </details>
+              <details class="group border-b border-white/10">
+                <summary class="flex justify-between items-center cursor-pointer py-3 list-none">
+                  <span
+                    class="font-headline font-bold text-sm text-white transition-colors group-hover:text-primary"
+                    >02. Product Thinking</span
+                  >
+                  <span
+                    class="material-symbols-outlined plus-icon text-white/40 text-sm transition-all group-hover:text-primary"
+                    >add</span
+                  >
+                  <span
+                    class="material-symbols-outlined minus-icon text-primary text-sm transition-all"
+                    >remove</span
+                  >
+                </summary>
+                <div class="font-body text-white/50 text-xs leading-relaxed pb-4 pr-4">
+                  I build interfaces focused on usability, clarity, and real product impact. Every
+                  decision is made to improve user experience and engagement.
+                </div>
+              </details>
+              <details class="group border-b border-white/10">
+                <summary class="flex justify-between items-center cursor-pointer py-3 list-none">
+                  <span
+                    class="font-headline font-bold text-sm text-white transition-colors group-hover:text-primary"
+                    >03. Performance Engineering</span
+                  >
+                  <span
+                    class="material-symbols-outlined plus-icon text-white/40 text-sm transition-all group-hover:text-primary"
+                    >add</span
+                  >
+                  <span
+                    class="material-symbols-outlined minus-icon text-primary text-sm transition-all"
+                    >remove</span
+                  >
+                </summary>
+                <div class="font-body text-white/50 text-xs leading-relaxed pb-4 pr-4">
+                  I prioritize smooth interactions, fast rendering, and optimized frontend
+                  performance. Every detail is refined for a seamless user experience.
+                </div>
+              </details>
+              <details class="group">
+                <summary class="flex justify-between items-center cursor-pointer py-3 list-none">
+                  <span
+                    class="font-headline font-bold text-sm text-white transition-colors group-hover:text-primary"
+                    >04. UI Precision</span
+                  >
+                  <span
+                    class="material-symbols-outlined plus-icon text-white/40 text-sm transition-all group-hover:text-primary"
+                    >add</span
+                  >
+                  <span
+                    class="material-symbols-outlined minus-icon text-primary text-sm transition-all"
+                    >remove</span
+                  >
+                </summary>
+                <div class="font-body text-white/50 text-xs leading-relaxed pb-4 pr-4">
+                  I translate designs into polished, responsive interfaces with strong attention to
+                  spacing, hierarchy, and visual consistency.
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="flex-grow lg:w-[60%] order-2 lg:order-2">
+            <div class="font-label text-xs text-primary font-bold mb-4 uppercase tracking-[0.2em]">
+              <span class="w-2 h-2 rounded-full bg-primary"></span>About
+            </div>
+            <h3 class="font- font-semibold text-3xl md:text-4xl text-white mb-8 leading-tight">
+              Driven By Curiosity
+            </h3>
+            <div class="space-y-6 font-body text-white/70 leading-relaxed text-md lg:max-w-2xl">
+              <p>
+                I started my journey in tech with a curiosity for how thoughtful digital experiences
+                can simplify people’s lives. Over the past 5+ years, that curiosity has evolved into
+                building scalable frontend applications across SaaS, fintech, analytics, and
+                enterprise platforms using React and modern web technologies. I’m deeply interested
+                in the balance between clean engineering, product thinking, and emerging AI-driven
+                workflows that help teams move faster without compromising quality.
+              </p>
+              <p>
+                Today, I continue to build with the same mindset that started it all — staying
+                curious, solving meaningful problems, and creating digital experiences that people
+                genuinely enjoy using.
+              </p>
+              <div class="pt-8 border-t border-white/10 flex gap-16">
+                <div>
+                  <div class="text-primary font-bold text-3xl font-headline">5+</div>
+                  <div class="text-[10px] uppercase tracking-widest font-label text-white/40 mt-1">
+                    Years Exp
+                  </div>
+                </div>
+                <div>
+                  <div class="text-primary font-bold text-3xl font-headline">10+</div>
+                  <div class="text-[10px] uppercase tracking-widest font-label text-white/40 mt-1">
+                    Shipped
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/loadComponents.js"></script>
+  </body>
+</html>
