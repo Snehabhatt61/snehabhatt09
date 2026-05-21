@@ -37,6 +37,7 @@ const load = (id, url) => {
 const isInPagesFolder = window.location.pathname.includes('/pages/')
 const basePath = isInPagesFolder ? '../' : './'
 
-// Load components with correct relative paths
+// Load Tailwind config first, then header/footer
+load('tailwind-config-placeholder', basePath + 'components/tailwind-config.html')
 load('header-placeholder', basePath + 'components/header.html')
 load('footer-placeholder', basePath + 'components/footer.html')

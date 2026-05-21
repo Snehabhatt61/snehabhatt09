@@ -1,0 +1,179 @@
+/* ========================================
+   SNEHA PORTFOLIO - BASE STYLES
+   Global resets, typography, and color system
+   ======================================== */
+
+/* FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* ========================================
+   CSS CUSTOM PROPERTIES - COLOR SYSTEM
+   ======================================== */
+
+:root {
+  /* Dark Theme (Primary for index.html) */
+  --color-primary: #bef264;
+  --color-accent: #f472b6;
+  --color-deep-indigo: #1e1b4b;
+  --color-mid-indigo: #312e81;
+  --color-surface: #1e1b4b;
+  --color-on-surface: #f8fafc;
+  --color-on-primary: #000000;
+
+  /* Light Theme (For case-study.html) */
+  --color-primary-light: #8b5cf6;
+  --color-primary-dark: #7c3aed;
+  --color-secondary: #65a30d;
+  --color-background: #f8fafc;
+  --color-on-background: #0f172a;
+
+  /* Resume Theme */
+  --color-resume-primary: #BDFF00;
+  --color-resume-secondary: #9D4EDD;
+  --color-charcoal: #4A4A4A;
+
+  /* Typography Scale */
+  --font-display: 3.75rem;
+  --font-h1: 2rem;
+  --font-h2: 1.5rem;
+  --font-h3: 1.25rem;
+  --font-body: 1rem;
+  --font-small: 0.875rem;
+  --font-xs: 0.75rem;
+
+  /* Spacing Scale */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-vivid: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2), 0 0 40px -10px rgba(244, 114, 182, 0.3);
+  --shadow-layered: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-highlight: 0 0 20px rgba(190, 242, 100, 0.4);
+  --shadow-high-depth: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  --shadow-xl-soft: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+
+  /* Transition timings */
+  --transition-fast: 200ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+}
+
+/* ========================================
+   GLOBAL RESETS
+   ========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #f8fafc;
+  background-color: #1e1b4b;
+  antialiased;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ========================================= */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--font-display);
+}
+
+h2 {
+  font-size: var(--font-h1);
+}
+
+h3 {
+  font-size: var(--font-h2);
+}
+
+h4 {
+  font-size: var(--font-h3);
+}
+
+p {
+  font-size: var(--font-body);
+  line-height: 1.6;
+}
+
+/* ========================================
+   LINKS
+   ========================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+/* ========================================
+   SCROLLBAR HIDE UTILITY
+   ========================================= */
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========================================
+   SELECTION STYLES
+   ========================================= */
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* ========================================
+   DETAIL/SUMMARY ELEMENT FIXES
+   ========================================= */
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .plus-icon {
+  display: none;
+}
+
+details:not([open]) .minus-icon {
+  display: none;
+}

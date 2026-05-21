@@ -1,0 +1,380 @@
+/* ========================================
+   SNEHA PORTFOLIO - UTILITIES & ANIMATIONS
+   Custom CSS utilities and animations for all pages
+   ======================================== */
+
+/* ========================================
+   BACKGROUND PATTERNS
+   ========================================= */
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center center;
+}
+
+.vivid-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(244, 114, 182, 0.15) 0%, transparent 70%);
+}
+
+/* ========================================
+   BORDER & STYLING UTILITIES
+   ========================================= */
+
+.neon-border {
+  border: 1px solid rgba(190, 242, 100, 0.3);
+}
+
+/* ========================================
+   3D TRANSFORM UTILITIES
+   ========================================= */
+
+.perspective-lg {
+  perspective: 2000px;
+}
+
+.laptop-keyboard-tilt {
+  transform: rotateX(60deg) translateY(-20px);
+  transform-style: preserve-3d;
+}
+
+.laptop-screen-tilt {
+  transform: rotateX(-5deg);
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ========================================= */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ANIMATION CLASSES
+   ========================================= */
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.reveal-item {
+  opacity: 0;
+  animation: reveal-up 400ms ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 25% cover 40%;
+}
+
+/* ========================================
+   STAGGER ANIMATION DELAYS
+   ========================================= */
+
+.stagger-1 {
+  animation-delay: 50ms;
+}
+
+.stagger-2 {
+  animation-delay: 100ms;
+}
+
+.stagger-3 {
+  animation-delay: 150ms;
+}
+
+.stagger-4 {
+  animation-delay: 200ms;
+}
+
+.stagger-5 {
+  animation-delay: 250ms;
+}
+
+/* ========================================
+   CARD & INTERACTION UTILITIES
+   ========================================= */
+
+.strategy-card {
+  transition: all 300ms ease-in-out;
+}
+
+.strategy-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.stack-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.challenge-card {
+  box-shadow: var(--shadow-xl-soft);
+  position: relative;
+  transition: all 500ms ease-in-out;
+  border: 1px solid #f5f3ff;
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+}
+
+.challenge-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+/* ========================================
+   HERO BACKGROUND EFFECTS
+   ========================================= */
+
+.hero-bg {
+  transform: scale(1.02);
+  transition:
+    transform 1200ms ease-out,
+    filter 1200ms ease-out;
+  filter: blur(0.4px);
+  will-change: transform, filter;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+/* ========================================
+   SHADOW UTILITIES
+   ========================================= */
+
+.shadow-vivid {
+  box-shadow: var(--shadow-vivid);
+}
+
+.shadow-layered {
+  box-shadow: var(--shadow-layered);
+}
+
+.shadow-highlight {
+  box-shadow: var(--shadow-highlight);
+}
+
+.shadow-high-depth {
+  box-shadow: var(--shadow-high-depth);
+}
+
+.shadow-xl-soft {
+  box-shadow: var(--shadow-xl-soft);
+}
+
+/* ========================================
+   LAYOUT UTILITIES
+   ========================================= */
+
+.max-width-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ========================================= */
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+/* ========================================
+   SCROLL UTILITIES
+   ========================================= */
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   TEXT UTILITIES
+   ========================================= */
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-surface {
+  color: var(--color-surface);
+}
+
+.text-on-surface {
+  color: var(--color-on-surface);
+}
+
+/* ========================================
+   BACKGROUND UTILITIES
+   ========================================= */
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-deep-indigo {
+  background-color: var(--color-deep-indigo);
+}
+
+.bg-mid-indigo {
+  background-color: var(--color-mid-indigo);
+}
+
+/* ========================================
+   BORDER UTILITIES
+   ========================================= */
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-accent {
+  border-color: var(--color-accent);
+}
+
+/* ========================================
+   TRANSPARENCY UTILITIES
+   ========================================= */
+
+.opacity-05 {
+  opacity: 0.05;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+/* ========================================
+   TRANSFORM UTILITIES FOR CASE STUDY
+   ========================================= */
+
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+}
+
+/* ========================================
+   FLEX & GRID UTILITIES
+   ========================================= */
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-auto {
+  display: grid;
+  gap: 1rem;
+}
+
+/* ========================================
+   CURSOR UTILITIES
+   ========================================= */
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+/* ========================================
+   OVERFLOW UTILITIES
+   ========================================= */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+/* ========================================
+   POSITIONING UTILITIES
+   ========================================= */
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+/* ========================================
+   MOTION PREFERENCES
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
