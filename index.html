@@ -5,11 +5,11 @@
     <title>Precision Luminary - Vivid Tech</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
     <script id="tailwind-config">
@@ -107,9 +107,11 @@
         class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1000px] vivid-gradient pointer-events-none"
       ></div>
       <section
-        class="relative min-h-[400px] sm:min-h-[600px] md:min-h-[800px] flex items-center px-4 sm:px-6 md:px-8 max-w-7xl mx-auto overflow-hidden"
+        class="relative min-h-[900px] sm:min-h-[600px] md:min-h-[800px] flex items-center px-4 sm:px-6 md:px-8 max-w-7xl mx-auto overflow-hidden"
       >
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center w-full z-10">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center w-full z-10"
+        >
           <div class="space-y-8 flex flex-col items-start order-1 lg:order-1">
             <div
               class="font-label text-sm text-primary tracking-widest uppercase flex items-center gap-2"
@@ -179,15 +181,15 @@
               >
                 <pre
                   class="leading-relaxed"
-                ><span class="text-accent">const</span> DownloadButton = ({ <span class="text-primary">label</span> }) =&gt; {
+                ><span class="text-accent">const</span> DownloadButton = ({ <span class="text-primary">label</span> }) => {
   <span class="text-accent">return</span> (
-    &lt;<span class="text-blue-400">button</span>
+    <<span class="text-blue-400">button</span>
       <span class="text-primary">className</span>=<span class="text-primary/70">"relative overflow-hidden bg-primary
                  text-black border-none
                  rounded-full font-label text-sm uppercase"</span>
-    &gt;
+    >
       {<span class="text-primary">label</span>}
-    &lt;/<span class="text-blue-400">button</span>&gt;
+    </<span class="text-blue-400">button</span>>
   )
 }
 </pre>
@@ -196,7 +198,10 @@
           </div>
         </div>
       </section>
-      <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 scroll-mt-24" id="featured-works">
+      <div
+        class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 scroll-mt-24"
+        id="featured-works"
+      >
         <div class="font-label text-md text-white/80 flex items-center gap-4">
           <span>root</span>
           <span class="material-symbols-outlined text-md"> double_arrow </span>
@@ -224,9 +229,13 @@
               <div
                 class="absolute bg-gradient-to-t from-deep-indigo via-deep-indigo/40 to-transparent"
               ></div>
-              <div class="absolute bottom-0 left-0 w-full p-4 sm:p-6 md:p-8 flex flex-col justify-end">
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 sm:p-6 md:p-8 flex flex-col justify-end"
+              >
                 <div class="transition-transform duration-500 group-hover:-translate-y-2">
-                  <h2 class="font-headline font-bold text-2xl sm:text-3xl text-white tracking-tight mb-2">
+                  <h2
+                    class="font-headline font-bold text-2xl sm:text-3xl text-white tracking-tight mb-2"
+                  >
                     MoneyPlanner Aditya Birla
                   </h2>
                   <!-- <p class="font-body text-white/60 text-sm">
@@ -259,7 +268,9 @@
               <div
                 class="absolute inset-0 bg-gradient-to-t from-deep-indigo via-deep-indigo/40 to-transparent"
               ></div>
-              <div class="absolute bottom-0 left-0 w-full p-6 sm:p-8 md:p-12 flex flex-col justify-end">
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 sm:p-8 md:p-12 flex flex-col justify-end"
+              >
                 <div class="transition-transform duration-500 group-hover:-translate-y-2">
                   <h2 class="font-headline font-bold text-3xl text-white tracking-tight mb-4">
                     Ornet Gift Shop
@@ -291,7 +302,9 @@
             <div class="font-label text-xs text-primary font-bold mb-4 uppercase tracking-[0.2em]">
               Methodology
             </div>
-            <h3 class="font-headline font-semibold text-2xl sm:text-3xl text-white mb-6 leading-tight">
+            <h3
+              class="font-headline font-semibold text-2xl sm:text-3xl text-white mb-6 leading-tight"
+            >
               How I Work
             </h3>
             <div class="space-y-1">
@@ -381,7 +394,7 @@
             <div class="font-label text-xs text-primary font-bold mb-4 uppercase tracking-[0.2em]">
               <span class="w-2 h-2 rounded-full bg-primary"></span>About
             </div>
-            <h3 class="font- font-semibold text-3xl md:text-4xl text-white mb-8 leading-tight">
+            <h3 class="font-headline font-semibold text-3xl md:text-4xl text-white mb-8 leading-tight">
               Driven By Curiosity
             </h3>
             <div class="space-y-6 font-body text-white/70 leading-relaxed text-md lg:max-w-2xl">
